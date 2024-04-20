@@ -190,6 +190,52 @@
 		}
 
 
+
+		/* contacts */
+
+		input, textarea, button{
+			padding: 10px;
+			border-radius: 5px;
+			font-size: 16px;
+			border: none;
+			outline: none;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+			transition: 0.3s;
+		}
+
+		button{
+			cursor: pointer;
+			text-transform: uppercase;
+			transition: 0.15s;
+		}
+		
+		button:active{
+			scale: 0.9;
+		}
+
+		input:focus, textarea:focus{
+			background: gray;
+			color: #fff;
+		}
+
+
+		form{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+		}
+
+		[name="comment"]{
+			resize: none;
+			height: 80px;
+			grid-column: 1/3;
+		}
+
+		label{
+			grid-column: 1/3;
+			user-select: none;
+		}
+
 	</style>
 </head>
 <body>
@@ -250,7 +296,23 @@
 		
 
 
-		<section id="contact">Контакты</section>	
+		<section id="contact">
+			<div class="container">
+				<h2>Контакты</h2>
+				<form>					
+					<input required placeholder="Введите имя" type="text" name="person">
+					<input required placeholder="Номер телефона" type="number" name="phone">
+					<textarea placeholder="Введите сообщение" name="comment"></textarea>
+					<label>
+						<input required type="checkbox">
+						<span>Я согласен на обработку своих персональных данных</span>
+					</label>
+
+					<button type="reset">сбросить</button>
+					<button type="submit">отправить</button>
+				</form>
+			</div>
+		</section>	
 	</main>
 
 	<footer>
